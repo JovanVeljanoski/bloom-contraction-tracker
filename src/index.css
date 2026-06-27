@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", var(--font-sans);
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Feminine, Joyful Pastel & Dreamy Soft Palette */
+  --color-dutch-white: #fff6f8;
+  --color-dutch-cream: #fee9ed;
+  --color-delft-blue: #6384cf;
+  --color-powder-blue: #b3dbf7;
+  --color-sage-green: #ecd3fd;
+  --color-warm-clay: #ff9fb8;
+  --color-soft-rose: #ffbccc;
+  --color-charcoal-warm: #3d262a;
+  --color-text-muted: #7d575f;
+}
+
+/* Base resets with a calming, tactile feel */
+body {
+  background-color: var(--color-dutch-white);
+  color: var(--color-charcoal-warm);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom soft breathing wave animation */
+@keyframes breathing-wave {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(229, 179, 158, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(229, 179, 158, 0.4);
+  }
+}
+
+.pulse-active {
+  animation: breathing-wave 4s infinite ease-in-out;
+}
+
